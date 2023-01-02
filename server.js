@@ -15,8 +15,8 @@ const login = require("./routes/login");
 app.set("views", "./views"); //views로 경로 설정
 app.set("view engine", "ejs");
 
-//routes 세팅
-app.use("/", home); // use는 미들 웨어를 등록해주는 메서드
+//routes 세팅 / use는 미들 웨어를 등록해주는 메서드
+app.use("/", home);
 app.use("/", login);
 
 module.exports = app;
