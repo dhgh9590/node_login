@@ -7,14 +7,16 @@ app.use(cors()); //cors에 필요한 코드
 const bodyParser = require("body-parser"); //form 데이터를 받기위해 필요한 코드
 app.use(bodyParser.urlencoded({ extended: true })); //form 데이터를 받기위해 필요한 코드
 
-app.listen(8080, function () {
-  console.log("listening on 8080");
-});
+//라우팅
+const home = require("./routes/home"); //routes의 home파일의 루트 경로
+const login = require("./routes/login");
 
-app.get("/", (req, res) => {
-  res.send("메인 화면");
-});
+//앱 세팅
+app.set("views", "./views"); //views로 경로 설정
+app.set("view engine", "ejs");
 
-app.get("/login", (req, res) => {
-  res.send("로그인 화면");
-});
+//routes 세팅
+app.use("/", home); // use는 미들 웨어를 등록해주는 메서드
+app.use("/", login);
+
+module.exports = app;

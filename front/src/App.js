@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './reset.css';
 import './App.css';
-import { Main } from './pages/index';
+import { Main, Login } from './pages/index';
 
 /* prop 타입체크 */
 // import PropTypes from 'prop-types';
@@ -19,6 +19,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Main></Main>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
       </Routes>
     </div>
   );
