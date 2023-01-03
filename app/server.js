@@ -14,6 +14,7 @@ const login = require("./src/routes/login");
 //앱 세팅
 app.set("views", "./app/src/views"); //views로 경로 설정
 app.set("view engine", "ejs");
+app.use(express.static(`${__dirname}/src/public`)); //js파일 정적경로 설정
 
 //routes 세팅 / use는 미들 웨어를 등록해주는 메서드
 app.use("/", home);
