@@ -5,6 +5,9 @@ const output = {
   login: (req, res) => {
     res.render("login/index");
   },
+  register: (req, res) => {
+    res.render("join/index");
+  },
 };
 
 //로그인 값 받기
