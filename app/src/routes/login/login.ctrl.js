@@ -5,7 +5,7 @@ const output = {
   login: (req, res) => {
     res.render("login/index");
   },
-  register: (req, res) => {
+  join: (req, res) => {
     res.render("join/index");
   },
 };
