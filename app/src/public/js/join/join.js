@@ -9,12 +9,17 @@ btn.addEventListener("click", function (e) {
 });
 
 function join(e) {
+  if (!id.value) {
+    return alert("아이디를 입력해주십시오.");
+  }
+  if (pw !== confirmPw) {
+    return alert("비밀번호가 일치하지 않습니다.");
+  }
   e.preventDefault();
   const req = {
     id: id.value,
     name: name.value,
     pw: pw.value,
-    confirmPw: confirmPw.value,
   };
   fetch(`http://localhost:8080/join`, {
     method: "POST",
@@ -31,5 +36,5 @@ function join(e) {
         alert(data.msg);
       }
     })
-    .catch((error) => console.error(new Error("로그인 중 에러 발생"))); //console창에 에러 띄우기
+    .catch((error) => console.log(error)); //console창에 에러 띄우기
 }
