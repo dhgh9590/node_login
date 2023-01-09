@@ -9,9 +9,9 @@ const output = {
 
 //로그인 값 받기
 const process = {
-  join: (req, res) => {
+  join: async (req, res) => {
     const user = new User(req.body);
-    const response = user.join();
+    const response = await user.join();
     return res.json(response);
   },
 };
